@@ -342,10 +342,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/Asteroid_Scripts/Asteroid.cs"
 "Assets/Scripts/Asteroid_Scripts/AsteroidSpawner.cs"
-"Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Inimigos_Scripts/BalaIni.cs"
+"Assets/Scripts/Inimigos_Scripts/Ovni.cs"
 "Assets/Scripts/Player_Scripts/Bala.cs"
 "Assets/Scripts/Player_Scripts/Player.cs"
-"Assets/Scripts/Vida.cs"
+"Assets/Scripts/Scripts_Gerais/Escudo.cs"
+"Assets/Scripts/Scripts_Gerais/GameManager.cs"
+"Assets/Scripts/Scripts_Gerais/Menu_Script.cs"
+"Assets/Scripts/Scripts_Gerais/Vida.cs"
 -langversion:8.0
 
 /deterministic
