@@ -13,7 +13,6 @@ public class AsteroidBreak
         var asteroidObject = new GameObject();
         var enemySpawner = new GameObject().AddComponent<AsteroidSpawner>();
 
-        enemySpawner.testMode = true;
         asteroidObject = enemySpawner.Spawn();
 
         if (asteroidObject != null)
@@ -21,10 +20,13 @@ public class AsteroidBreak
             asteroidObject.GetComponent<Asteroid>().TakeDamage();
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
 
         var allAsteroids = GameObject.FindGameObjectsWithTag("Asteroid");
 
         Assert.AreEqual(2, allAsteroids.Length);
     }
 }
+
+
+

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    
+
+
     public Sprite[] Asteroid_sprites;
 
     public float tamanho = 1.0f;
@@ -17,6 +20,8 @@ public class Asteroid : MonoBehaviour
 
     private SpriteRenderer sprites;
     private Rigidbody2D Asteroid_Rigidbody;
+
+
 
     //Estabelecendo referencias
     private void Awake()

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public const float TOPO_TELA = 5.4f;
+    public const float FUNDO_TELA = -5.4f;
+    public const float ESQUERDA_TELA = -9.3f;
+    public const float DIREITA_TELA = 9.3f;   
+
+
     public Bala BalaPrefab;
 
     public float VelocidadeDeImpulso = 1.0f;
     public float VelocidadeDeVirada = 1.0f;
-    public float topoTela = 5.4f;
-    public float fundoTela = -5.4f;
-    public float EsquerdaTela = -9.3f;
-    public float direitaTela = 9.3f;
+
 
     private Rigidbody2D Player_rigidbody;
     public SpriteRenderer SR;
@@ -62,21 +65,21 @@ public class Player : MonoBehaviour
 
         Vector2 newPos = transform.position;
        
-        if (transform.position.y > topoTela)
+        if (transform.position.y > TOPO_TELA)
         {
-            newPos.y = fundoTela;
+            newPos.y = FUNDO_TELA;
         }
-        if (transform.position.y < fundoTela)
+        if (transform.position.y < FUNDO_TELA)
         {
-            newPos.y = topoTela;
+            newPos.y = TOPO_TELA;
         }
-        if (transform.position.x > direitaTela)
+        if (transform.position.x > DIREITA_TELA)
         {
-            newPos.x = EsquerdaTela;
+            newPos.x = ESQUERDA_TELA;
         }
-        if (transform.position.x < EsquerdaTela)
+        if (transform.position.x < ESQUERDA_TELA)
         {
-            newPos.x = direitaTela;
+            newPos.x = DIREITA_TELA;
         }
         transform.position = newPos;
 
@@ -107,7 +110,14 @@ public class Player : MonoBehaviour
     {
         // movimentar para uma posição aleatoria
 
+        Vector2 oldPos = transform.position;
         Vector2 newPos = new Vector2(Random.Range(-8.25f, 8.25f), Random.Range(-4.4f, 4.4f));
+
+        while (Vector2.Distance(oldPos, newPos) < 1)
+        {
+            newPos = new Vector2(Random.Range(-8.25f, 8.25f), Random.Range(-4.4f, 4.4f));
+        }
+
         transform.position = newPos;
         Player_rigidbody.velocity = Vector3.zero;
         Player_rigidbody.angularVelocity = 0.0f;

@@ -6,6 +6,7 @@ using UnityEngine.TestTools;
 
 public class HyperspaceTest
 {
+    
 
     [UnityTest]
     public IEnumerator HyperspaceTestWithEnumeratorPasses()
@@ -18,6 +19,7 @@ public class HyperspaceTest
 
         yield return new WaitForSeconds(0.2f);
 
-        Assert.AreNotEqual(oldPosition, player.transform.position);
+        //Assert.AreNotEqual(oldPosition, player.transform.position);
+        Assert.Greater(Vector3.Distance(oldPosition, player.transform.position), 1.0f);
     }
 }

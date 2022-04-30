@@ -7,32 +7,26 @@ using UnityEngine.TestTools;
 public class ScreenBordersTest
 {
     [Test]
-
     public void NorthBorder()
     {
-        var player = new GameObject().AddComponent<Player>();
-        Assert.AreEqual(5.4f, player.GetComponent<Player>().topoTela);
+        Assert.AreEqual(5.4f, Player.TOPO_TELA);
     }
     [Test]
-
     public void SouthBorder()
     {
-        var player = new GameObject().AddComponent<Player>();
-        Assert.AreEqual(-5.4f, player.GetComponent<Player>().fundoTela);
+        Assert.AreEqual(-5.4f, Player.FUNDO_TELA);
     }
     [Test]
-
     public void LeftBorder()
     {
-        var player = new GameObject().AddComponent<Player>();
-        Assert.AreEqual(-9.3f, player.GetComponent<Player>().EsquerdaTela);
+        Assert.AreEqual(-9.3f, Player.ESQUERDA_TELA);
     }
     [Test]
-
     public void RightBorder()
     {
-        var player = new GameObject().AddComponent<Player>();
-        Assert.AreEqual(9.3f, player.GetComponent<Player>().direitaTela);
+        Assert.AreEqual(9.3f, Player.DIREITA_TELA);
     }
 
 }
+
+

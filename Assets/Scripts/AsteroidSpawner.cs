@@ -11,7 +11,6 @@ public class AsteroidSpawner : MonoBehaviour
     public float taxaDeSpawns = 5.0f;
     public int quantidadeDeSpawns = 1;
     public float distanciaDeSpawn = 15.0f;
-    public bool testMode = false;
 
     private void Start()
     {
@@ -19,6 +18,11 @@ public class AsteroidSpawner : MonoBehaviour
     }
 
     public GameObject Spawn()
+    {
+        return Spawn(false);
+    }
+
+    public GameObject Spawn(bool test) // (bool test = false)
     {
         var asteroidObject = new GameObject();
         for (int i = 0; i < this.quantidadeDeSpawns; i++)
@@ -32,12 +36,14 @@ public class AsteroidSpawner : MonoBehaviour
 
             GameObject asteroid = Instantiate(prefab, PontoDespawn, rotacao);
             var asteroidComponent = asteroid.GetComponent<Asteroid>();
-            if(!testMode)
-                asteroidComponent.tamanho = Random.Range(asteroidComponent.tamanhoMin, asteroidComponent.tamanhoMax);
-            else
-            {
-                asteroidComponent.tamanho = Random.Range(1.0f, asteroidComponent.tamanhoMax);
-            }
+
+            float asteroidMin = asteroidComponent.tamanhoMin;
+
+            if (test) // só entra se for true
+                asteroidMin = 1.0f;
+
+            asteroidComponent.tamanho = Random.Range(asteroidMin, asteroidComponent.tamanhoMax);
+
             asteroidComponent.Trajetoria(rotacao * -DirecaoDeSpawn);
             asteroidObject = asteroid.gameObject;
         }
@@ -46,3 +52,6 @@ public class AsteroidSpawner : MonoBehaviour
     }
 
 }
+
+
+
