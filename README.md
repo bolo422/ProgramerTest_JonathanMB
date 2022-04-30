@@ -1,6 +1,3 @@
-# ProgramerTest_JonathanMB
- ProgramerTest 
- 
-O Jogo foi feito utilizando Unity Engine
+# TDD e Unit Test
 
-Dentro da Pasta ProgramerTest_Jogo se encontra o Executavel
+Andrei, Erick e Jonathan
