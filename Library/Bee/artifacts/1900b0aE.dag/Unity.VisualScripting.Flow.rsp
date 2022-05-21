@@ -122,6 +122,10 @@
 -define:MODULE_PARTICLE_SYSTEM_EXISTS
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Moq/Castle.Core.dll"
+-r:"Assets/Plugins/Moq/Moq.dll"
+-r:"Assets/Plugins/Moq/System.Diagnostics.EventLog.dll"
+-r:"Assets/Plugins/Moq/System.Security.Principal.Windows.dll"
 -r:"D:/GitHub/ProgramerTest_JonathanMB/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
 -r:"D:/GitHub/ProgramerTest_JonathanMB/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
 -r:"D:/GitHub/ProgramerTest_JonathanMB/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
